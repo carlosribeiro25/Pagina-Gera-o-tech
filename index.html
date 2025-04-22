@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geração Tech</title>
+  <link rel="stylesheet" href="css/import.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"/>
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    .modal-box {
+      border-radius: 12px;
+      animation: slideDown 0.4s ease-out;
+    }
+
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      color: black;
+      padding: 2px 6px;
+      border: 1px solid black;
+      border-radius: 6px;
+      font-size: 10px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    .icon-wrapper:hover .tooltip {
+      opacity: 1;
+    }
+
+    .btn-salvar {
+      background-color: #203969;
+      color: white;
+      border: 2px solid white;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-salvar:hover {
+      background-color: #1a2f55;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<header>
+  <div class="header-top">
+    <div class="first-nav">
+      <img class="imagem-geração" src="img/logo.png"">
+      <nav>
+          <ul>
+              <li><a href=" #home">Página Inicial</a></li>
+      <li><a href="#sobre">Painel</a></li>
+      <li><a href="#servicos">Meus Cursos</a></li>
+      </ul>
+      </nav>
+    </div>
+  
+
+    <div class="second-nav">
+      <ul class="nav-lista">
+        <li><label class="nav-item ativo">Curso</label></li>
+        <li><label class="nav-item">Participantes</label></li>
+        <li><label class="nav-item">Notas</label></li>
+        <li><label class="nav-item">Competências</label></li>
+      </ul>
+    </div>
+</div>
+</header>
+
+
+<body class="bg-[#F2F3F7] min-h-screen">
+  <iframe class="iframe-sz-chat" scrolling="no"
+    src="https://digitalcollege2.sz.chat/webchat/v2/?cid=665de375669fb40017ae8a3e&amp;host=https%3A%2F%2Fdigitalcollege2.sz.chat&amp;locale=pt-BR"
+    allow="microphone" z-index: 2147483640;">
+  </iframe>
+  <!-- Controle de estado -->
+  <input type="checkbox" id="menu-toggle" class="peer hidden">
+
+  <!-- Botão como label vinculado ao checkbox -->
+  <label for="menu-toggle" class="hamburguer-button z-50" title="Abrir índice do curso">
+    <i class="ph-bold ph-list-bullets text-2xl ml-2"></i>
+    <span class="sr-only">Abrir índice do curso</span>
+  </label>
+
+  <aside class="sidebar">
+    <!-- BOTÃO DE FECHAR dentro da sidebar -->
+    <label for="menu-toggle" class="close-button" title="Fechar índice do curso">
+      <i class="ph-bold ph-x text-xl"></i>
+    </label>
+
+    <!-- Adriana vai preencher aqui -->
+    <div class="sidebar-content" style="max-height: calc(100vh - 100px); overflow-y: auto;">
+      <details open>
+        <summary class="custom-summary bg-[#203969] text-white px-2 py-2 rounded-md">
+          <i class="ph-bold ph-greater-than arrow-icon"></i>
+          <span class="title">Boas vindas</span>
+        </summary>
+        <a class="course-index" href="#">É com muita alegria que damos início à sua jornada...</a>
+        <!-- Conteúdo virá aqui depois -->
+      </details>
+
+      <details>
+        <summary class="custom-summary text-gray-800 px-2.5 whitespace-nowrap">
+          <i class="ph-bold ph-greater-than arrow-icon"></i>
+          <span class="title-main">CONTEÚDO COMPLEMENTAR</span>
+        </summary>
+        <a class="course-index" href="#">Unidade 1: Introdução ao Desenvolvimento Web 💻</a>
+        <a class="course-index" href="#">Esta é a nossa primeira unidade de conteúdo!Primei...</a>
+        <label class="flex items-center gap-2">
+          <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+          <a class="topic-index" href="#">O que é Desenvolvimento Web?</a>
+        </label>
+        <a class="course-index" href="#">Unidade 2: HTML e CSS 💻</a>
+        <a class="course-index" href="#">Este é o nosso segundo conteúdo! Seus estudos leva...</a>
+        <label class="flex items-center gap-2">
+          <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+          <a class="topic-index" href="#">Configuração e introdução ao HTML</a>
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+          <a class="topic-index" href="#">Tags HTML e estrutura</a>
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+          <a class="topic-index" href="#">Fundamentos do CSS</a>
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+          <a class="topic-index" href="#">Propriedades de layout e Box Model</a>
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+          <a class="topic-index" href="#">CSS Flexbox e suas propriedades</a>
+        </label>
+        <a class="course-index" href="#">Continuação Flexbox</a>
+        <a class="course-index" href="#">Unidade 3: Git e Github 💻</a>
+        <a class="course-index" href="#">Bem-vindos a mais um conteúdo! Vamos aprender sobr...</a>
+        <label class="flex items-center gap-2">
+          <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+          <a class="topic-index" href="#">Git e Github</a>
+        </label>
+        <a class="course-index" href="#">Unidade 4: Bibliotecas para HTML e CSS 💻</a>
+        <a class="course-index" href="#">Vamos conhecer sobre o Bootstrap, uma das bibliote...</a>
+        <label class="flex items-center gap-2">
+          <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+          <a class="topic-index" href="#">Bootstrap</a>
+        </label>
+        <details>
+          <summary class="custom-summary text-gray-800 px-2.5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">Módulo 2 - Desenvolvimento Front-end - De 15.04 a 05.05.2025</span><i
+              class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 px-2.5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">Módulo 3 - Back-end - De 06.05 a 01.06.2025</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 px-2.5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">Módulo 4 - Testes Automatizados - De 02.06 a 09.06.2025</span><i
+              class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 px-2.5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">Exercícios de HTML e CSS</span>
+          </summary>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+            <a class="topic-modulo" href="#">Questionário 1</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Questionário 2</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+            <a class="topic-modulo" href="#">Atividade 01</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+            <a class="topic-modulo" href="#">Atividade 02</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content">
+            <a class="topic-modulo" href="#">Instruções para o Desafio de HTML do Free Code
+              Camp</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade Prática: Criando um Portfólio Simples</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade de CSS</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Continuação da atividade - Desafio 2: Aplicando Flexbox</a>
+          </label> <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Questionário</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Introdução ao Git e GitHub</a>
+          </label>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 px-2.5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">Exercícios de Javascript</span>
+          </summary>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Mini Projeto JavaScript - Parte 1</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Mini Projeto JavaScript - Parte 2</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Mini Projeto JavaScript - Parte 3</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Mini Projeto JavaScript - Parte 4</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Mini Projeto JavaScript - Parte 5</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Final do Mini Projeto de JavaScript</a>
+          </label>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 px-2.5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">Exercícios de React</span>
+          </summary>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Exercício de Fixação</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Exercício de Fixação</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Criando um Formulário de Feedback com useState</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade de Fixação: Rotas e Componentes em React</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade de Fixação: Estilização e Interatividade com CSS em React</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Criando uma Mini Loja Virtual com PrimeReact e Axios</a>
+          </label>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 px-2.5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">Exercícios de Back-end</span>
+          </summary>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Introdução ao Node.js e Express</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Criação de Rotas Simples</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+          <label class="flex items-center gap-2 subtopic">
+            <input type="radio" class="w-4 h-4 m-0 p-0 box-content invisible">
+            <a class="topic-modulo" href="#">Atividade do Dia!</a>
+          </label>
+        </details>
+      </details>
+
+      <details>
+        <summary class="custom-summary text-gray-800 px-2.5">
+          <i class="ph-bold ph-greater-than arrow-icon"></i>
+          <span class="title-main">TURMA ALDEOTA</span>
+        </summary>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT09</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT10</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT11</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT12</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT13</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT14</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT15</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT16</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT17</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT18</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT19</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+      </details>
+
+      <details>
+        <summary class="custom-summary text-gray-800 px-2.5">
+          <i class="ph-bold ph-greater-than arrow-icon"></i>
+          <span class="title-main">TURMA SUL</span>
+        </summary>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT07</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT08</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT09</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT10</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT11</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+      </details>
+      <details>
+        <summary class="custom-summary text-gray-800 px-2.5">
+          <i class="ph-bold ph-greater-than arrow-icon"></i>
+          <span class="title-main">TURMA BEZERRA</span>
+        </summary>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT01</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT02</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+        <details>
+          <summary class="custom-summary text-gray-800 ml-5 modulo">
+            <i class="ph-bold ph-greater-than arrow-icon"></i>
+            <span class="title">GT03</span><i class="ph-fill ph-lock-simple"></i>
+          </summary>
+        </details>
+      </details>
+
+    </div>
+
+  </aside>
+  <header class="bg-[#F2F3F7]">
+    <div class="max-w-5xl mx-auto px-6 py-6">
+      <div id="course-banner"
+        style="background-image: url('https://lms.iel-ce.org.br/pluginfile.php/17398/course/overviewfiles/turmaPresencial.jpeg'); background-position: center 10%;">
+        <div id="course-header-banner-text" class="h2 text-2xl font-bold text-center py-8">
+          Desenvolvedor Web Full Stack - Presencial - 2.0
+        </div>
+      </div>
+      <div class="flex items-center gap-2 mt-4">
+        <div class="text-yellow-500 flex">
+          <i class="ph-fill ph-star"></i>
+          <i class="ph-fill ph-star"></i>
+          <i class="ph-fill ph-star"></i>
+          <i class="ph-fill ph-star"></i>
+          <i class="ph-fill ph-star"></i>
+        </div>
+        <span class="text-orange-400 font-bold ml-2">5.0</span>
+        <span class="text-gray-600 ml-1">(3)</span>
+        <a href="#" class="text-blue-600 underline ml-4">Avaliar</a>
+      </div>
+    </div>
+  </header>
+  <div class="fixed top-[80px] right-0 translate-x-1/2 z-50" id="drawer-button">
+    <label for="my-drawer" class="btn btn-circle w-20 h-16 shadow-lg flex items-center justify-center transition-all duration-300 hover:w-26 
+    hover:shadow-xl hover:transform hover:scale-x-125 mt-12" style="background-color: #203969; transform-origin: right center;">
+      <i class="fa fa-chevron-left text-white text-lg mr-10 transition-all duration-300"></i> <!-- O ícone fica fixo à direita -->
+    </label>
+  </div>
+  <main class="bg-[#F2F3F7]">
+    <div class="bg-white rounded-xl p-6 shadow-md max-w-6xl mx-auto mt-10">
+
+      <nav class="border-b border-gray-300 mb-6">
+        <ul class="flex gap-6 text-sm font-semibold text-gray-700">
+          <li><a href="#">Boas vindas</a></li>
+          <li><a href="#">CONTEÚDO COMPLEMENTAR</a></li>
+          <li><a href="#">TURMA ALDEOTA</a></li>
+          <li><a href="#">TURMA SUL</a></li>
+          <li><a href="#">TURMA BEZERRA</a></li>
+        </ul>
+      </nav>
+      <h2 class="text-xl font-bold text-[#203969] mb-4 flex items-center gap-2">
+        <i class="ph ph-folder-simple text-lg"></i>
+        Boas-vindas
+      </h2>
+
+      <div class="texto"> É com muita alegria que damos início à sua jornada no <strong>Geração Tech 2.0,</strong> que
+        acontecerá de
+        <strong>01/04/2025 a
+          20/06/2025!</strong> Durante esse período, vocês terão acesso a um universo de aprendizado e oportunidades
+        incríveis no
+        mundo da tecnologia.
+        <br></br>
+
+        Para apoiar seus estudos, disponibilizamos aqui no <strong>Moodle,</strong> um material de estudos para vocês
+        complementarem seu
+        aprendizado no curso.
+      </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Todos os direitos reservados</p>
+      </footer>
+  </main>
+  <!-- Drawer lateral direita -->
+  <div class="drawer drawer-end z-40">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-side fixed top-[64px] right-0">
+      <!-- Overlay transparente -->
+      <label for="my-drawer" class="drawer-overlay bg-transparent"></label>
+
+      <!-- Conteúdo da gaveta -->
+      <div class="w-[380px] bg-white shadow-md shadow-gray-300 min-h-screen px-4 py-8 border-l border-gray-300 relative">
+
+        <!-- Botão X para fechar -->
+        <label for="my-drawer" class="absolute top-3 right-4 cursor-pointer text-gray-500 hover:text-black text-xl mt-12"role="button" 
+        aria-label="Fechar a gaveta" tabindex="0"><i class="icon fa fa-times fa-fw " aria-hidden="true" id="yui_3_18_1_1_1745237791371_365"></i>
+        </label>
+
+        <!-- Cards com mais espaçamento e mais margem superior -->
+        <div class="space-y-8 mt-10">
+          
+          <!-- Card: Arquivos Privados -->
+          <div class="bg-white rounded-2xl shadow-md shadow-gray-300 p-4 flex flex-col gap-6 mt-16">
+            <h2 class="font-bold text-lg">Arquivos privados</h2>
+            <p class="text-sm text-gray-500">Nenhum arquivo disponível</p>
+            <a href="#" id="abrirModal" class="link-primary block text-sm hover:underline text-[#203969]">
+              Gerenciar arquivos privados...
+            </a>
+
+  <!-- Modal -->
+  <dialog id="modal_arquivos" class="modal">
+    <div class="modal-box w-full max-w-3xl p-6 bg-white relative overflow-hidden">  
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-bold text-black">
+          Gerenciar arquivos privados
+        </h3>
+        <button
+          class="btn btn-sm btn-circle btn-ghost"
+          onclick="document.getElementById('modal_arquivos').close()"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- Informativo -->
+      <div class="flex justify-between text-sm mb-2">
+        <span class="font-medium">Arquivos</span>
+        <span class="text-gray-500"
+          >Tamanho máximo para novos arquivos: 64 Mb, geral: 100 Mb</span
+        >
+      </div>
+
+      <!-- Ações -->
+      <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
+        <div class="flex gap-4 flex-wrap">
+          <!-- Criar diretório -->
+          <div class="relative icon-wrapper">
+            <button class="btn btn-sm btn-outline">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            </button>
+            <div class="tooltip">Criar diretório</div>
+          </div>
+          <!-- Adicionar -->
+          <div class="relative icon-wrapper">
+            <button class="btn btn-sm btn-outline">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12V4m0 0L8 8m4-4l4 4"
+                />
+              </svg>
+            </button>
+            <div class="tooltip">Adicionar</div>
+          </div>
+        </div>
+
+        <div class="flex gap-4 items-center flex-wrap">
+          <!-- Visualizações -->
+          <div class="relative icon-wrapper">
+            <button class="btn btn-sm btn-outline">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"
+                />
+              </svg>
+            </button>
+            <div class="tooltip">Mostrar pastas com ícones de arquivos</div>
+          </div>
+          <div class="relative icon-wrapper">
+            <button class="btn btn-sm btn-outline">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+              </svg>
+            </button>
+            <div class="tooltip">
+              Mostrar pastas com os detalhes do arquivo
+            </div>
+          </div>
+          <div class="relative icon-wrapper">
+            <button class="btn btn-sm btn-outline">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v1H2V6zM2 9h16v5a2 2 0 01-2 2H4a2 2 0 01-2-2V9z"
+                />
+              </svg>
+            </button>
+            <div class="tooltip">Mostrar pasta como árvore de arquivos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caminho -->
+      <div class="relative inline-block group mb-4">
+        <div class="flex items-center gap-2 text-black cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v1H2V6zM2 9h16v5a2 2 0 01-2 2H4a2 2 0 01-2-2V9z"
+            />
+          </svg>
+          <span class="font-medium relative">Arquivos</span>
+        </div>
+
+        <!-- Dropdown (hover sobre "Arquivos") -->
+        <ul
+          class="absolute left-6 mt-1 bg-white border border-gray-300 rounded-lg shadow-md text-sm text-gray-700 w-40 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-10"
+        >
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            Documentos
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Imagens</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Vídeos</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Outros</li>
+        </ul>
+      </div>
+
+      <!-- Dropzone -->
+      <div
+        class="border-2 border-dashed border-gray-300 p-6 rounded-lg text-center hover:border-blue-400 flex flex-col items-center justify-center"
+      >
+        <div class="flex justify-center mb-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10 text-gray-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12V4m0 0L8 8m4-4l4 4"
+            />
+          </svg>
+        </div>
+        <p class="text-sm text-gray-500">
+          Você pode arrastar e soltar arquivos aqui para adicioná-los.
+        </p>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="modal-action mt-6">
+        <div class="flex gap-2">
+          <button
+            class="btn bg-gray-200 text-gray-700 hover:bg-gray-300 border border-gray-300"
+          >
+            Cancelar
+          </button>
+          <button class="btn btn-salvar">Salvar mudanças</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+            <div id="container-modal"></div>
+            
+          </div>
+          
+
+          <!-- Card: Correio Eletrônico -->
+          <div class="bg-white rounded-2xl shadow-md shadow-gray-300 p-4">
+            <h2 class="font-bold text-lg mb-3">Correio eletrônico</h2>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-center gap-2">📧<a href="#" class="hover:underline" style="color: #203969;">Compor Mensagem do Curso</a></li>
+              <li class="flex items-center gap-2">📝<a href="#" class="hover:underline" style="color: #203969;">Ver Rascunhos</a></li>
+              <li class="flex items-center gap-2">📅<a href="#" class="hover:underline" style="color: #203969;">Ver Agendados</a></li>
+              <li class="flex items-center gap-2">📨<a href="#" class="hover:underline" style="color: #203969;">Ver Mensagens Enviadas</a></li>
+              <li class="flex items-center gap-2">⭐<a href="#" class="hover:underline" style="color: #203969;">Minhas Assinaturas</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript para fazer que botão da gaveta suma -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const drawerToggle = document.getElementById('my-drawer');
+      const drawerButton = document.getElementById('drawer-button');
+  
+      drawerToggle.addEventListener('change', () => {
+        if (drawerToggle.checked) {
+          drawerButton.style.display = 'none'; // Esconde o botão
+        } else {
+          drawerButton.style.display = 'block'; // Mostra de novo
+        }
+      });
+    });
+  </script>
+  <script>
+    document.getElementById('abrirModal').addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      // Só carrega o modal se ainda não tiver carregado
+      if (!document.getElementById('modal_arquivos')) {
+        fetch('modal.html')
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById('container-modal').innerHTML = html;
+            document.getElementById('modal_arquivos').showModal();
+          });
+      } else {
+        document.getElementById('modal_arquivos').showModal();
+      }
+    });
+  </script>
+</body>
+
+</html>
