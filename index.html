@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Geração Tech</title>
   <link rel="stylesheet" href="css/import.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="JS/script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -96,12 +98,27 @@
 </header>
 
 
-<body class="bg-[#F2F3F7] min-h-screen">
-  <iframe class="iframe-sz-chat" scrolling="no"
-    src="https://digitalcollege2.sz.chat/webchat/v2/?cid=665de375669fb40017ae8a3e&amp;host=https%3A%2F%2Fdigitalcollege2.sz.chat&amp;locale=pt-BR"
-    allow="microphone" z-index: 2147483640;">
-  </iframe>
+<body>
   
+  <div class="chat-box" id="chatBox">
+    <button class="close-btn" onclick="fecharChat()">×</button>
+    <img  class="img-webchat"  src="img/4368786.png" alt="">
+    
+    
+    <h5 class="text-chat "> Olá, para iniciarmos um   atendimento, precisamos de algumas informações.</h5>
+    <form action="index.html">
+            <input type="nome" placeholder="Seu Nome" required>
+      <br>
+      <br>
+      <input type="email" placeholder="Seu E-mail" required>
+      <br>
+      <br>
+      <button  class="btn-form"   type="submit"> Iniciar atendimento </button>
+    </form>
+  </div>
+
+  <button class="  open-chat-btn" id="openChatBtn" onclick="abrirChat()"> <img class="imag-btn"  src="img/suport.png" alt=""></button>
+
   <!-- Controle de estado -->
   <input type="checkbox" id="menu-toggle" class="peer hidden">
 
