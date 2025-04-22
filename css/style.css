@@ -7,9 +7,9 @@
     border-radius: 30px;
     width: 280px;
     display: none; 
-    height: 420px;
+    height: 520px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-    left: 1050px;
+    left: 1200px;
     }
 
   .open-chat-btn {
@@ -71,7 +71,7 @@
         border-radius: 20px;
         border:none;
         align-items: center;
-        margin-left: 25px;
+        margin-left: 30px;
         font-size: small;
         font-size: larger;
         color: black;
@@ -89,7 +89,7 @@
         border: none;
         align-items: center;
         margin-left: 25px;
-        background-color: rgb(32, 31, 30);
+        background-color: rgb(59, 58, 56);
         color: white;
         margin-bottom: 40px;
         font-size: larger;
